@@ -1,0 +1,4 @@
+(1) Describe why allocations fail in ./test 3.
+Allocations fail in test 3 because as more allocations are attempted, more memory is being used therefore if large memory requests are being made, there is less memory available, and therefore a lesser liklihood that a memory slot of the appropriate size will be available, increasing the rate of failure.
+
+(2) Describe what you see in plot-fail_rate.png and plot-thoughput.png. Which approach has a better throughput and why?
