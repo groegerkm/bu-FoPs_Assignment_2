@@ -2,3 +2,7 @@
 Allocations fail in test 3 because as more allocations are attempted, more memory is being used therefore if large memory requests are being made, there is less memory available, and therefore a lesser liklihood that a memory slot of the appropriate size will be available, increasing the rate of failure.
 
 (2) Describe what you see in plot-fail_rate.png and plot-thoughput.png. Which approach has a better throughput and why?
+In the plot throughput graph, you can see that t2 has a higher throughput as allocation size increases than to t. This is becuase t2 includes the coalescing step, preventing a build up of many smaller blocks of memory and therefore making it faster and easier to find a memory block of the appropriate size even when larger blocks are needed.
+
+(3) Which approach has a better fail rate and why?
+In the plot fail rate graph, the fail rate of t sharply increases as the max allocation size increases whereas the failure rate of t2 remains relatively constant (0.1). The reduction in failures for t2 is due to the coalescing step creating larger blocks of free space to be used. T suffers from having many smaller blocks that are too small for the calls being made, and therefore causing said failures.
